@@ -1,0 +1,26 @@
+{% extends "login/base_login.html" %}
+
+{% block form %}
+
+<form method="post" class="form">
+    <h1 class="form_title">Регистрация</h1>
+
+    <div class="form_group">
+        <input type="text" placeholder=" " name="login" class="form_input" required/>
+        <label class="form_label">Логин</label>
+    </div>
+
+    <div class="form_group">
+        <input type="password" placeholder=" " name="password" class="form_input" required/>
+        <label class="form_label">Пароль</label>
+    </div>
+
+    <div class="form_group">
+        <input type="password" placeholder=" " name="password2" class="form_input" required/>
+        <label class="form_label">Повтор пароля</label>
+    </div>
+
+    <button type="submit" class="form_button">Зарегистрироваться</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "employee/base_employee.html" %}
+
+{% block content %}
+
+<div class="main_form">
+    <div class="container">
+        <div class="main_form_inner">
+            {% for cat, msg in get_flashed_messages(True) %}
+                <div class="message">
+                    <div class="flash {{cat}}">{{msg}}</div>
+                </div>
+            {% endfor %}
+
+            <form method="post" class="form">
+                <div class="form_group">
+                    <input type="text" name="name" placeholder=" " class="form_input" required/>
+                    <label class="form_label">Название</label>
+                </div>
+                
+                <div class="form_group">
+                    <input type="text" name="author" placeholder=" " class="form_input" required/>
+                    <label class="form_label">Автор</label>
+                </div>
+
+                <div class="form_group">
+                    <input type="number" min="1500" max="2023" step="1" name="year" placeholder=" " class="form_input" required/>
+                    <label class="form_label">Год</label>
+                </div>
+
+                <div class="form_group">
+                    <input type="number" min="1" name="count" placeholder=" " class="form_input" required/>
+                    <label class="form_label">Количество экземпляров</label>
+                </div>
+                
+                <button class="form_button" type="submit">Добавить книгу</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

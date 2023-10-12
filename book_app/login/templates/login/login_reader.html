@@ -1,0 +1,31 @@
+{% extends "login/base_login.html" %}
+
+{% block form %}
+
+<form method="post" class="form">
+    <h1 class="form_title">Вход</h1>
+
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="message">
+            <div class="flash {{cat}}">{{msg}}</div>
+        </div>
+    {% endfor %}
+
+    <div class="form_group">
+        <input type="text" placeholder=" " name="login" class="form_input">
+        <label class="form_label">Email</label>
+    </div>
+
+    <div class="form_group">
+        <input type="password" placeholder=" " name="password" class="form_input">
+        <label class="form_label">Пароль</label>
+    </div>
+
+    <button type="submit" class="form_button">Войти</button>
+
+    <div class="form_logout">
+        <a href="/register_reader">Зарегистрироваться</a>
+    </div>
+</form>
+
+{% endblock %}

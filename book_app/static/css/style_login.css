@@ -1,0 +1,107 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #E9DCD6;
+}
+
+.message {
+    margin: 20px 0 30px 0;
+}
+
+.flash.error {
+    background-color: #FF9C9C;
+    padding: 20px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #AF0000;
+    text-align: center;
+}
+
+.form {
+    width: 300px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #CCCCCC;
+    font-family: 'Motserrat', sans-serif;
+    background-color: #fff;
+}
+
+.form_input, 
+.form_button {
+    font-family: 'Motserrat', sans-serif;
+    font-size: 16px;
+}
+
+.form_title {
+    text-align: center;
+    margin: 0 0 32px 0;
+}
+
+.form_group {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #9E9E9E;
+    transition: .3s;
+}
+
+.form_input {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    outline: none;
+    transition: .3s;
+}
+
+.form_input:focus {
+    border-bottom: 1px solid #F3736F;
+}
+
+.form_button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #F3736F;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form_logout {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form_logout a{
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    transition: .3s;
+}
+
+.form_logout a:hover {
+    transform: scale(1.1);
+}
+
+.form_button:focus,
+.form_button:hover {
+    transform: scale(1.1);
+}
+
+.form_input:focus ~ .form_label,
+.form_input:not(:placeholder-shown) ~ .form_label {
+    top: -18px;
+    font-size: 12px;
+    color: #E0E0E0;
+}

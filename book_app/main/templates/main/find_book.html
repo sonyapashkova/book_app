@@ -1,0 +1,62 @@
+{% extends "main/base_main.html" %}
+
+{% block content %}
+
+<div class="main_form">
+    <div class="container">
+        <div class="main_form_inner">
+            {% for cat, msg in get_flashed_messages(True) %}
+                <div class="message">
+                    <div class="flash {{cat}}">{{msg}}</div>
+                </div>
+            {% endfor %}
+
+            <form method="post" class="form">
+                <div class="form_group">
+                    <input type="text" name="name" placeholder=" " class="form_input">
+                    <label class="form_label">Название</label>
+                </div>
+                
+                <div class="form_group">
+                    <input type="text" name="author" placeholder=" " class="form_input">
+                    <label class="form_label">Автор</label>
+                </div>
+    
+                <div class="form_group">
+                    <input type="number" min="1500" max="2023" step="1" name="year" placeholder=" " class="form_input">
+                    <label class="form_label">Год</label>
+                </div>
+                
+                <button class="form_button" type="submit">Найти книгу</button>
+            </form>
+
+            <div class="main_form_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Название</th>
+                            <th>Автор</th>
+                            <th>Год</th>
+                            <th>Количество экземпляров</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+                        <tr>
+                            <td>{{ book.id }}</td>
+                            <td>{{ book.name }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.year }}</td>
+                            <td>{{ book.count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

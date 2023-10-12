@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный каталог</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Young+Serif&display=swap" rel="stylesheet">
+    <link text="text/css" href = "{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+    <header>
+       <div class="container">
+            <div class="header_inner">
+                <div class="logo">
+                    <a href="/">Книжный каталог</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/find_book">Найти книгу</a></li>
+                        <li><a href="#">Войти</a>
+                            <ul>
+                                <li><a href="/login_reader">Кабинет читателя</a></li>
+                                <li><a href="/login_employee">Кабинет coтрудника</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+       </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+        <p>Copyright, 2023</p>
+    </footer>
+
+</body>
+</html>
